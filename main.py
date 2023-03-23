@@ -139,6 +139,7 @@ def docx_to_html(docx_file, architecture_image_file, cost_chart_image_file):
             html_content = f'<img src="{architecture_image_file}" alt="Architecture">'
             html_content += result.value
 
+        html_content = f'<!DOCTYPE html><html><head><meta charset="utf-8"><title>True Order UML</title></head><body><a href="{architecture_image_file}" target="_blank">'
         html_content += f'<div style="page-break-before: always;"></div>'
         html_content += f'<h2>Addendum: Activity Based Cost Estimates</h2>'
         html_content += f'<img src="{cost_chart_image_file}" alt="Cost Chart" style="width:80%; height:auto;">'
