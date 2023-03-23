@@ -9,7 +9,8 @@ uml_text = '''
 
 top to bottom direction
 
-scale 1000 width
+scale max 1000 height
+scale max 1000 width
 
 actor "User" as user
 
