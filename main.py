@@ -83,7 +83,7 @@ with open(uml_file, 'w') as f:
 subprocess.call(['java', '-jar', 'plantuml-1.2023.4.jar', '-tpng', '-o', os.path.dirname(os.path.abspath(png_file)), uml_file])
 
 input_file = "True Order Architecture based on IATA.docx"
-output_file = "architecture.html"
+output_file = "index.html"
 image_file = "architecture.png"  # Use the vertically cascading UML diagram
 
 import matplotlib.pyplot as plt
