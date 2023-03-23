@@ -8,7 +8,7 @@ The architecture is divided into different systems such as the Offer Management 
 
 In addition to the architecture, the project also includes an activity-based cost estimate that provides an overview of the costs associated with running the systems at certain volumes. The cost estimates are based on the different systems and components involved in the architecture and provide an estimate of the yearly cost of running the True Order platform.
 
-How to use
+How to use:
 The True Order UML project includes a Python script that generates a UML diagram based on the architecture described in the project. The script also generates an HTML file that includes the UML diagram, along with additional information about the project.
 
 To use the project, you will need to have Python installed on your computer. Once you have Python installed, you can run the script by navigating to the project directory and running the following command:
