@@ -1,0 +1,67 @@
+
+@startuml
+
+top to bottom direction
+
+scale 1000 width
+
+actor "User" as user
+
+User -> OfferManagement : Request Offers
+User -> OrderManagement : Place Order
+User -> FlightScheduleData : Request Flight Data
+
+package "Offer Management System" as OfferManagement {
+  [Amadeus Altéa Inventory] as amadeus_altea
+  [Sabre AirVision Marketing & Planning Suite] as sabre_airvision
+}
+
+package "Order Management System" as OrderManagement {
+  [IBS Software iFly Res] as ibs_ifly_res
+  [Radixx Res] as radixx_res
+}
+
+package "Flight and Schedule Data System" as FlightScheduleData {
+  [OAG Schedules Analyzer] as oag_schedules
+  [Innovata Schedule Reference Service] as innovata_schedule
+}
+
+OrderManagement -> RevenueAccounting : Update Revenue Data
+OrderManagement -> ThirdPartyDelivery : Request Third Party Services
+OrderManagement -> AutomatedCheckin : Request Check-in Services
+OrderManagement -> Middleware : Integrate External Services
+OrderManagement -> PaymentHub : Process Payments
+OrderManagement -> FlightScheduleData : Get Flight Data
+OrderManagement -> ESPReservation : Process Reservations
+
+package "Revenue Accounting System" as RevenueAccounting {
+  [Accelya REVERA] as accelya_revera
+  [Mercator Sirius] as mercator_sirius
+}
+
+package "Third-Party Delivery Systems" as ThirdPartyDelivery {
+  [Farelogix FLX Merchandise] as farelogix_flx
+  [Datalex Digital Commerce Platform] as datalex_digital
+}
+
+package "Automated Check-in Service (DCS)" as AutomatedCheckin {
+  [Amadeus Altea DCS] as amadeus_altea_dcs
+  [SabreSonic DCS] as sabresonic_dcs
+}
+
+package "Middleware" as Middleware {
+  [MuleSoft Anypoint Platform] as mulesoft_anypoint
+  [TIBCO Cloud Integration] as tibco_cloud
+}
+
+package "Payment Hub" as PaymentHub {
+  [Adyen Payment Platform] as adyen_payment
+  [Worldpay from FIS] as worldpay_fis
+}
+
+package "ESP (Electronic Sales Platform) Reservation Service" as ESPReservation {
+  [Navitaire New Skies] as navitaire_new_skies
+  [SITA Horizon] as sita_horizon
+}
+
+@enduml
