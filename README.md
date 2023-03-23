@@ -6,7 +6,7 @@ True Order is an architectural sketch that offers services such as flight bookin
 
 The architecture is divided into different systems such as the Offer Management System, Order Management System, Flight and Schedule Data System, Revenue Accounting System, Third-Party Delivery Systems, Automated Check-in Service, Middleware, Payment Hub, and ESP Reservation Service. These systems are interconnected, and each plays a specific role in ensuring the smooth delivery of services.
 
-In addition to the architecture, the project also includes an activity-based cost estimate that provides an overview of the costs associated with running the online travel agency. The cost estimates are based on the different systems and components involved in the architecture and provide an estimate of the yearly cost of running the True Order platform.
+In addition to the architecture, the project also includes an activity-based cost estimate that provides an overview of the costs associated with running the systems at certain volumes. The cost estimates are based on the different systems and components involved in the architecture and provide an estimate of the yearly cost of running the True Order platform.
 
 How to use
 The True Order UML project includes a Python script that generates a UML diagram based on the architecture described in the project. The script also generates an HTML file that includes the UML diagram, along with additional information about the project.
