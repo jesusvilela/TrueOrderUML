@@ -138,7 +138,7 @@ def docx_to_html(docx_file, architecture_image_file, cost_chart_image_file):
 
 
 def save_as_html(content, file_name):
-    with open(file_name, "w") as output:
+    with open(file_name, "w", encoding="utf-8") as output:
         output.write(content)
 
 content = docx_to_html(input_file, image_file, cost_chart_file)
