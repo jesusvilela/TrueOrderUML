@@ -128,24 +128,13 @@ create_cost_chart(cost_data, cost_chart_file)
 def docx_to_html(docx_file, architecture_image_file, cost_chart_image_file):
     with open(docx_file, "rb") as file:
         result = mammoth.convert_to_html(file)
-
-        title_pattern = re.compile(r'<h[1-6][^>]*>.*?</h[1-6]>')
-        title_match = title_pattern.search(result.value)
-        if title_match is not None:
-            title = title_match.group(0)
-            html_content = result.value
-            html_content = html_content.replace(title, f"{title}<br><img src='{architecture_image_file}' alt='Architecture' style='width: 100%; height: auto; cursor: pointer;' onclick=\"window.open('image_viewer.html', '_blank');\">", 1)
-        else:
-            html_content = f'<img src="{architecture_image_file}" alt="Architecture">'
-            html_content += result.value
-
         html_content = f'<!DOCTYPE html><html><head><meta charset="utf-8"><title>True Order UML</title></head><body><a href="{architecture_image_file}" target="_blank">'
+        html_content += f'<img src="{architecture_image_file}" alt="Architecture" style="width:auto; height:auto;"></a>'
+        html_content += result.value
         html_content += f'<div style="page-break-before: always;"></div>'
         html_content += f'<h2>Addendum: Activity Based Cost Estimates</h2>'
         html_content += f'<img src="{cost_chart_image_file}" alt="Cost Chart" style="width:80%; height:auto;">'
         return html_content
-
-
 
 
 def save_as_html(content, file_name):
